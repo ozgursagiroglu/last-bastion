@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+*.log
+.DS_Store
+.claude/settings.local.json
+.arbab/
+.arbab-tmp/
+.serena/

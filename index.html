@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Last Bastion — Tower Defense Built with arbab &amp; ExodeUI</title>
+    <meta name="description" content="Free browser tower defense: 10 levels, 5 towers, 3 difficulties. Built by parallel AI agents with arbab and rendered entirely with the ExodeUI runtime." />
+    <meta name="keywords" content="tower defense, browser game, html5 game, typescript, exodeui, arbab, claude code, ai agents, multi-agent" />
+    <meta name="author" content="Özgür Sağıroğlu" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#14110f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://ozgursagiroglu.github.io/last-bastion/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Last Bastion" />
+    <meta property="og:title" content="Last Bastion — Tower Defense Built with arbab &amp; ExodeUI" />
+    <meta property="og:description" content="Free browser tower defense: 10 levels, 5 towers, 3 difficulties. Built by parallel AI agents with arbab and rendered entirely with the ExodeUI runtime." />
+    <meta property="og:url" content="https://ozgursagiroglu.github.io/last-bastion/" />
+    <meta property="og:image" content="https://ozgursagiroglu.github.io/last-bastion/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Last Bastion title screen: King Sunny, the lion king mascot, beside the title while a troll and a column of goblins march along a dirt road past cannon, rifle and frost towers toward a castle." />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Last Bastion — Tower Defense Built with arbab &amp; ExodeUI" />
+    <meta name="twitter:description" content="Free browser tower defense: 10 levels, 5 towers, 3 difficulties. Built by parallel AI agents with arbab and rendered entirely with the ExodeUI runtime." />
+    <meta name="twitter:image" content="https://ozgursagiroglu.github.io/last-bastion/og-image.png" />
+    <meta name="twitter:image:alt" content="Last Bastion title screen: King Sunny, the lion king mascot, beside the title while a troll and a column of goblins march along a dirt road past cannon, rifle and frost towers toward a castle." />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preload" href="/fonts/LilitaOne-Regular.ttf" as="font" type="font/ttf" crossorigin />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "VideoGame",
+            "@id": "https://ozgursagiroglu.github.io/last-bastion/#game",
+            "name": "Last Bastion",
+            "url": "https://ozgursagiroglu.github.io/last-bastion/",
+            "description": "Free browser tower defense: 10 levels, 5 towers, 3 difficulties. Built by parallel AI agents with arbab and rendered entirely with the ExodeUI runtime.",
+            "image": "https://ozgursagiroglu.github.io/last-bastion/og-image.png",
+            "genre": ["Tower defense", "Strategy"],
+            "gamePlatform": "Web browser",
+            "applicationCategory": "Game",
+            "operatingSystem": "Any",
+            "playMode": "SinglePlayer",
+            "numberOfPlayers": 1,
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": { "@id": "https://ozgursagiroglu.github.io/last-bastion/#author" },
+            "sameAs": "https://github.com/ozgursagiroglu/last-bastion"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://ozgursagiroglu.github.io/last-bastion/#source",
+            "name": "Last Bastion source code",
+            "codeRepository": "https://github.com/ozgursagiroglu/last-bastion",
+            "programmingLanguage": "TypeScript",
+            "runtimePlatform": "Web browser (ExodeUI runtime)",
+            "license": "https://opensource.org/licenses/MIT",
+            "author": { "@id": "https://ozgursagiroglu.github.io/last-bastion/#author" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://ozgursagiroglu.github.io/last-bastion/#author",
+            "name": "Özgür Sağıroğlu",
+            "url": "https://github.com/ozgursagiroglu"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Last Bastion?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Last Bastion is a free tower defense game that runs in the browser. It has 10 levels on four themed maps (meadow, desert, snow and volcano), five towers with three upgrade levels each, and six enemy types up to the Orc Warlord boss. Every level can be played on easy, normal or hard."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How was Last Bastion built?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It was built with arbab, a Claude Code plugin that runs fenced, headless Claude workers in parallel git worktrees. The orchestrator wrote the shared contracts and the briefs, and lanes built the simulation, levels, art, scene, HUD, menus, balance and app shell in waves. Verify, review and readiness gates ran on every lane before it landed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is ExodeUI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExodeUI is an interactive animation and UI runtime, an alternative to Rive. Every sprite, map, effect and menu in Last Bastion is an ExodeUI artboard drawn by its canvas engine, including its built-in glow, light-trail and particle effects. The game's mascot, King Sunny, is a rigged character from ExodeUI's mascot library."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much did it cost and how long did it take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The README in the source repository lists the time and the API-equivalent cost of every lane that built the game: https://github.com/ozgursagiroglu/last-bastion#readme"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I play?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Click a stone pad to build a tower, and click a tower to upgrade or sell it. Press START to send the first wave. Every enemy that reaches the castle costs lives, so stop them on the road."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      @font-face {
+        font-family: 'Lilita One';
+        src: url('/fonts/LilitaOne-Regular.ttf') format('truetype');
+        font-display: block;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #14110f;
+        overflow: hidden;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      #app {
+        position: fixed;
+        inset: 0;
+      }
+      #app canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .noscript {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        overflow: auto;
+        padding: 10vh 24px;
+        background: #14110f;
+        color: #f3e6c8;
+        font: 18px/1.5 sans-serif;
+        text-align: center;
+        user-select: text;
+        -webkit-user-select: text;
+      }
+      .noscript h2 {
+        color: #ffd95a;
+        font-family: 'Lilita One', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        margin: 0 0 12px;
+      }
+      .noscript ul {
+        display: inline-block;
+        text-align: left;
+      }
+      .noscript a {
+        color: #ffd95a;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="visually-hidden">Last Bastion — a free browser tower defense game</h1>
+    <section class="visually-hidden" aria-label="About Last Bastion">
+      <p>
+        Last Bastion is a free tower defense game for the browser: 10 levels on four themed maps, five towers with three
+        upgrade levels each, six enemy types up to the Orc Warlord boss, and three difficulties. It was built by parallel
+        AI agents with arbab, and every pixel is rendered with the ExodeUI runtime.
+      </p>
+      <h2>How to play</h2>
+      <ul>
+        <li>Click a stone pad to build a tower.</li>
+        <li>Click a tower to upgrade or sell it.</li>
+        <li>Press START to send the first wave.</li>
+        <li>Enemies that reach the castle cost lives.</li>
+      </ul>
+      <ul>
+        <li><a href="https://github.com/ozgursagiroglu/last-bastion">Source code on GitHub</a></li>
+        <li><a href="https://github.com/ozgursagiroglu/arbab">arbab</a></li>
+        <li><a href="https://www.exodeui.com/">ExodeUI</a></li>
+      </ul>
+    </section>
+    <noscript>
+      <div class="noscript">
+        <h2>Last Bastion</h2>
+        <p>A free browser tower defense game: 10 levels, 5 towers, 3 difficulties. It needs JavaScript to run; please enable it and reload the page.</p>
+        <ul>
+          <li>Click a stone pad to build a tower.</li>
+          <li>Click a tower to upgrade or sell it.</li>
+          <li>Press START to send the first wave.</li>
+          <li>Enemies that reach the castle cost lives.</li>
+        </ul>
+        <p>
+          <a href="https://github.com/ozgursagiroglu/last-bastion">Source code</a> ·
+          <a href="https://github.com/ozgursagiroglu/arbab">arbab</a> ·
+          <a href="https://www.exodeui.com/">ExodeUI</a>
+        </p>
+      </div>
+    </noscript>
+    <main id="app" aria-label="Last Bastion game"></main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

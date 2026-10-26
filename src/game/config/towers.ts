@@ -1,0 +1,77 @@
+import type { TowerDef, TowerKind } from '../types';
+
+export const TOWERS: Readonly<Record<TowerKind, TowerDef>> = {
+  rifle: {
+    kind: 'rifle',
+    name: 'Rifleman',
+    description: 'Fast-firing soldier. Hits flying enemies too.',
+    damageType: 'physical',
+    hitsAir: true,
+    hitsGround: true,
+    attack: 'hitscan',
+    levels: [
+      { cost: 70, range: 150, damage: 12, fireInterval: 0.6 },
+      { cost: 90, range: 165, damage: 20, fireInterval: 0.5 },
+      { cost: 140, range: 180, damage: 32, fireInterval: 0.4 },
+    ],
+  },
+  cannon: {
+    kind: 'cannon',
+    name: 'Cannon',
+    description: 'Slow, heavy shells with splash damage. Cannot hit flyers.',
+    damageType: 'physical',
+    hitsAir: false,
+    hitsGround: true,
+    attack: 'cannonball',
+    levels: [
+      { cost: 120, range: 140, damage: 30, fireInterval: 1.8, splashRadius: 55 },
+      { cost: 150, range: 150, damage: 50, fireInterval: 1.6, splashRadius: 65 },
+      { cost: 220, range: 165, damage: 80, fireInterval: 1.4, splashRadius: 75 },
+    ],
+  },
+  frost: {
+    kind: 'frost',
+    name: 'Frost Tower',
+    description: 'Launches ice shards that slow enemies down.',
+    damageType: 'energy',
+    hitsAir: true,
+    hitsGround: true,
+    attack: 'iceShard',
+    projectileSpeed: 520,
+    levels: [
+      { cost: 100, range: 130, damage: 6, fireInterval: 1.0, slow: { factor: 0.65, duration: 2 } },
+      { cost: 120, range: 140, damage: 10, fireInterval: 0.9, slow: { factor: 0.55, duration: 2.2 } },
+      { cost: 180, range: 150, damage: 16, fireInterval: 0.8, slow: { factor: 0.45, duration: 2.5 } },
+    ],
+  },
+  tesla: {
+    kind: 'tesla',
+    name: 'Tesla Coil',
+    description: 'Chain lightning that jumps between enemies.',
+    damageType: 'energy',
+    hitsAir: true,
+    hitsGround: true,
+    attack: 'chain',
+    levels: [
+      { cost: 150, range: 120, damage: 25, fireInterval: 1.4, chain: { targets: 3, range: 80, falloff: 0.15 } },
+      { cost: 180, range: 130, damage: 40, fireInterval: 1.2, chain: { targets: 4, range: 85, falloff: 0.15 } },
+      { cost: 260, range: 140, damage: 60, fireInterval: 1.0, chain: { targets: 5, range: 90, falloff: 0.15 } },
+    ],
+  },
+  rocket: {
+    kind: 'rocket',
+    name: 'Rocket Launcher',
+    description: 'Long-range homing rockets. Extra damage to flyers.',
+    damageType: 'physical',
+    hitsAir: true,
+    hitsGround: true,
+    attack: 'rocket',
+    projectileSpeed: 360,
+    airDamageMultiplier: 1.5,
+    levels: [
+      { cost: 180, range: 200, damage: 60, fireInterval: 2.2, splashRadius: 45 },
+      { cost: 220, range: 220, damage: 95, fireInterval: 2.0, splashRadius: 50 },
+      { cost: 320, range: 240, damage: 150, fireInterval: 1.8, splashRadius: 60 },
+    ],
+  },
+};

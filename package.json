@@ -1,0 +1,53 @@
+{
+  "name": "last-bastion",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Last Bastion: a 10-level browser tower defense game built by parallel AI agents with arbab and rendered entirely with the ExodeUI runtime.",
+  "keywords": [
+    "tower-defense",
+    "browser-game",
+    "html5-game",
+    "typescript",
+    "exodeui",
+    "arbab",
+    "claude-code",
+    "ai-agents",
+    "multi-agent"
+  ],
+  "homepage": "https://ozgursagiroglu.github.io/last-bastion/",
+  "bugs": {
+    "url": "https://github.com/ozgursagiroglu/last-bastion/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozgursagiroglu/last-bastion.git"
+  },
+  "license": "MIT",
+  "author": "Özgür Sağıroğlu (https://github.com/ozgursagiroglu)",
+  "type": "module",
+  "packageManager": "pnpm@12.10.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:perf": "PERF_BUDGET=1 vitest run src/game/sim/simulation.test.ts src/render/scene/gameScene.perf.test.ts",
+    "art:render": "node --import tsx scripts/render-art.ts",
+    "media": "node --import tsx scripts/media.ts"
+  },
+  "dependencies": {
+    "exodeui": "7.2.18",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.0.13",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

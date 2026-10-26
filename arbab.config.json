@@ -1,0 +1,37 @@
+{
+  "baseBranch": "main",
+  "maxParallel": 4,
+  "instructions": ["CLAUDE.md"],
+  "commands": {
+    "implementer": ["pnpm test", "pnpm typecheck", "pnpm build", "pnpm art:render", "pnpm media"],
+    "verifier": ["pnpm test", "pnpm typecheck", "pnpm build", "pnpm art:render"],
+    "reviewer": ["pnpm test", "pnpm typecheck"]
+  },
+  "gates": [
+    ["pnpm", "typecheck"],
+    ["pnpm", "test"],
+    ["pnpm", "build"]
+  ],
+  "preflight": {
+    "steps": [
+      ["pnpm", "typecheck"],
+      ["pnpm", "test"],
+      ["pnpm", "art:render", "reference"]
+    ]
+  },
+  "dependencies": {
+    "strategy": "command",
+    "command": ["pnpm", "install", "--frozen-lockfile"]
+  },
+  "landing": {
+    "tier": "medium"
+  },
+  "quota": {
+    "holdAbove": { "fiveHour": 0.99, "sevenDay": 0.95 }
+  },
+  "review": {
+    "lenses": {
+      "performance": "Per-frame cost in the game loop, the sim step and the render adapters: allocations per frame, O(n^2) scans over enemies/towers, engine object counts per artboard, clips touching more parts than move, canvas shadows or filters on pooled sprites."
+    }
+  }
+}
